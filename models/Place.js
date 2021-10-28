@@ -11,7 +11,7 @@ Place.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        name: {
+        placeName: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -23,13 +23,6 @@ Place.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        // review_id: {
-        //     type: DataTypes.TEXT,
-        //     references: {
-        //         model: 'review',
-        //         key: 'id',
-        //     },    
-        // },
     },
     {
         sequelize,
