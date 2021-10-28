@@ -10,3 +10,4 @@ User.hasMany(Review, {
     foreignKey: 'user_id',
 })
 
+module.exports = { User, Place, Review }

@@ -23,13 +23,13 @@ Place.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        review_id: {
-            type: DataTypes.TEXT,
-            references: {
-                model: 'review',
-                key: 'id',
-            },    
-        },
+        // review_id: {
+        //     type: DataTypes.TEXT,
+        //     references: {
+        //         model: 'review',
+        //         key: 'id',
+        //     },    
+        // },
     },
     {
         sequelize,
