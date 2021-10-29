@@ -10,40 +10,104 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 	<!-- Bootstrap core CSS -->
-	<link href="plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 	<!-- Font Icon Styles -->
 	<script src="https://kit.fontawesome.com/fd91f3fcd6.js" crossorigin="anonymous"></script>
 
 	<!-- Style -->
-	<link href="" rel="stylesheet">
+	<link href="./public/css/style.css" rel="stylesheet">
 </head>
 <body>
+
 <header>
-
-  <div class="overlay"></div>
-
-  <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-    <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
-  </video>
-
-  <div class="container h-100">
-    <div class="d-flex h-100 text-center align-items-center">
-      <div class="w-100 text-white">
-        <h1 class="display-3">Video Header</h1>
-        <p class="lead mb-0">Using HTML5 Video and Bootstrap</p>
-      </div>
-    </div>
-  </div>
-  
+	<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+		<div class="container-fluid">
+			<a class="navbar-brand me-auto" href="#">Sitename Pending</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse flex-grow-0" id="navbarText">
+				<ul class="navbar-nav mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#signup" >Sign up</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#login">Log in</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 </header>
-
 
 	{{{body}}}
 
+<!-- Sign up Modal -->
+<div class="modal fade" id="signup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content spooky-modal-content">
+      <div class="modal-header spooky-modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body spooky-modal-body">
+        <h5 class="modal-title spooky-modal-title" id="staticBackdropLabel">Sign up</h5>
 
-	<footer></footer>
+				<svg width="100%" height="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,400 C 0,400 0,200 0,200 C 19.041575566843257,177.46614034726497 38.08315113368651,154.93228069452996 61,145 C 83.91684886631349,135.06771930547004 110.7089710320972,137.73701756914517 138,171 C 165.2910289679028,204.26298243085483 193.08096473792463,268.1196490288893 217,268 C 240.91903526207537,267.8803509711107 260.96717001620436,203.78438631529778 283,191 C 305.03282998379564,178.21561368470222 329.05035519725794,216.74280570991957 357,219 C 384.94964480274206,221.25719429008043 416.8314091947639,187.24439084502387 441,202 C 465.1685908052361,216.75560915497613 481.6240080236861,280.2796309099849 504,274 C 526.3759919763139,267.7203690900151 554.6725587104918,191.6370855150365 576,188 C 597.3274412895082,184.3629144849635 611.6857571343467,253.17202702986916 636,248 C 660.3142428656533,242.82797297013084 694.5844127521214,163.67480636548683 721,154 C 747.4155872478786,144.32519363451317 765.9765918571677,204.1287475081836 789,218 C 812.0234081428323,231.8712524918164 839.5092198192077,199.81020360177865 866,183 C 892.4907801807923,166.18979639822135 917.9865288660017,164.6304380847017 937,192 C 956.0134711339983,219.3695619152983 968.5446647167854,275.6680440594145 995,271 C 1021.4553352832146,266.3319559405855 1061.834812266857,200.69738567764026 1091,183 C 1120.165187733143,165.30261432235974 1138.1160862157867,195.54241323002455 1154,188 C 1169.8839137842133,180.45758676997545 1183.7008428699953,135.13296140226146 1210,153 C 1236.2991571300047,170.86703859773854 1275.0805423042323,251.9257411609296 1306,248 C 1336.9194576957677,244.0742588390704 1359.9769879130765,155.1640739540201 1381,133 C 1402.0230120869235,110.8359260459799 1421.0115060434618,155.41796302298997 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="#a60026ff" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path></svg>
+				
+					<form class="signup-form">
+						<div class="circle-portrait">
+								<img src="./public/assets/images/haunted-portrait.gif">
+						</div>
+						<div class="form-group">
+								<input type="text" class="form-control item" id="username" placeholder="Username" required>
+						</div>
+						<div class="form-group">
+								<input type="password" class="form-control item" id="password" placeholder="Password" required>
+						</div>
+						<div class="form-group">
+								<input type="text" class="form-control item" id="email" placeholder="Email" required>
+						</div>
+						<div class="form-group text-center">
+								<button type="button" class="btn btn-block create-account">Create Account</button>
+						</div>
+					</form>
+      </div>
+    </div>
+  </div>
+</div>
 
-<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Log in Modal -->
+<div class="modal fade" id="login" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content spooky-modal-content">
+      <div class="modal-header spooky-modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body spooky-modal-body">
+        <h5 class="modal-title spooky-modal-title" id="staticBackdropLabel">Log in</h5>
+
+				<svg width="100%" height="100%" id="svg" viewBox="0 0 1440 400" xmlns="http://www.w3.org/2000/svg" class="transition duration-300 ease-in-out delay-150"><path d="M 0,400 C 0,400 0,200 0,200 C 19.041575566843257,177.46614034726497 38.08315113368651,154.93228069452996 61,145 C 83.91684886631349,135.06771930547004 110.7089710320972,137.73701756914517 138,171 C 165.2910289679028,204.26298243085483 193.08096473792463,268.1196490288893 217,268 C 240.91903526207537,267.8803509711107 260.96717001620436,203.78438631529778 283,191 C 305.03282998379564,178.21561368470222 329.05035519725794,216.74280570991957 357,219 C 384.94964480274206,221.25719429008043 416.8314091947639,187.24439084502387 441,202 C 465.1685908052361,216.75560915497613 481.6240080236861,280.2796309099849 504,274 C 526.3759919763139,267.7203690900151 554.6725587104918,191.6370855150365 576,188 C 597.3274412895082,184.3629144849635 611.6857571343467,253.17202702986916 636,248 C 660.3142428656533,242.82797297013084 694.5844127521214,163.67480636548683 721,154 C 747.4155872478786,144.32519363451317 765.9765918571677,204.1287475081836 789,218 C 812.0234081428323,231.8712524918164 839.5092198192077,199.81020360177865 866,183 C 892.4907801807923,166.18979639822135 917.9865288660017,164.6304380847017 937,192 C 956.0134711339983,219.3695619152983 968.5446647167854,275.6680440594145 995,271 C 1021.4553352832146,266.3319559405855 1061.834812266857,200.69738567764026 1091,183 C 1120.165187733143,165.30261432235974 1138.1160862157867,195.54241323002455 1154,188 C 1169.8839137842133,180.45758676997545 1183.7008428699953,135.13296140226146 1210,153 C 1236.2991571300047,170.86703859773854 1275.0805423042323,251.9257411609296 1306,248 C 1336.9194576957677,244.0742588390704 1359.9769879130765,155.1640739540201 1381,133 C 1402.0230120869235,110.8359260459799 1421.0115060434618,155.41796302298997 1440,200 C 1440,200 1440,400 1440,400 Z" stroke="none" stroke-width="0" fill="#a60026ff" class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path></svg>
+				
+					<form class="signup-form">
+						<div class="circle-portrait">
+								<img src="./public/assets/images/haunted-portrait2.gif">
+						</div>
+						<div class="form-group">
+								<input type="text" class="form-control item" id="username" placeholder="Username" required>
+						</div>
+						<div class="form-group">
+								<input type="password" class="form-control item" id="password" placeholder="Password" required>
+						</div>
+						<div class="form-group text-center">
+								<button type="button" class="btn btn-block create-account" style="padding: 10px 50px">Log in</button>
+						</div>
+					</form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
