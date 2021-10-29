@@ -17,6 +17,13 @@ Vote.init(
         down_vote: {
             type: DataTypes.BOOLEAN,
         },
+        place_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'place',
+                key: 'id'
+            }
+        },
     },
     {
         sequelize,
