@@ -1,0 +1,271 @@
+@font-face {
+	font-family: "Ghoulish";
+	src: url("../assets/fonts/Ghoulish/GhoulFriAOE.ttf") format("truetype") }
+
+@font-face {
+  font-family: "Halloween Morning";
+  src: url("../assets/fonts/HalloweenMorning/Halloween\ Morning.ttf") format("truetype") }
+
+@font-face {
+  font-family: "Misfits";
+  src: url("../assets/fonts/Misfits/MISFITS_.TTF") format("truetype") }
+
+body {
+  /* font-family:'Dogica Pixel'; */
+  /* font-size: 14px; */
+  font-weight: 400;
+  /* line-height: 1.4; */
+  color: #F3EFF5;
+  background-color: #000;
+  text-align: left;
+  overflow: hidden;
+  height: 100vh;}
+
+header .navbar {
+  height: 56px;
+}
+
+/** jumbotron **/
+.spooky-jumbotron {
+  position: relative;
+  background-color: black;
+  height: calc(100vh - 56px);
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+.spooky-jumbotron video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.spooky-jumbotron .container {
+  position: relative;
+  z-index: 2;
+}
+
+.spooky-jumbotron .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+@media (pointer: coarse) and (hover: none) {
+  .spooky-jumbotron {
+    background: url('../assets/images/spooky-bg.jpg') black no-repeat center center scroll;
+    background-size: cover
+  }
+
+  .spooky-jumbotron video {
+    display: none;
+  }
+}
+
+/** inputs **/
+
+#city-input,
+#state-input {
+  color:#F3EFF5;
+  background-color: black;
+  border: 1px solid #272727;
+}
+
+/** pumpkin button credit: https://codepen.io/ShopifyPartners/pen/pEqWNv **/
+
+.pumpkin {
+  position: relative;
+  display: inline-block;
+  margin-right: 1em;
+}
+
+.pumpkin-body {
+  width: 100px;
+  height: 60px;
+  background-color: #fac331;
+  border-radius: 40px;
+  background-image: linear-gradient(to right, #fac331 50%, #d4692b 50%);
+  transition: fill 150ms, box-shadow 250ms ease-in-out;
+}
+
+.pumpkin-body:hover {
+  box-shadow: 5px 10px 10px 5px rgba(240, 139, 49, 0.55);
+  animation: glow 15ms ease-in infinite alternate;
+}
+.pumpkin-body::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 60px;
+  left: 10px;
+  background-color: #ef8b31;
+  border-radius: 50%;
+}
+.pumpkin-body::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 12px;
+  left: 42px;
+  top: -18px;
+  background-image: linear-gradient( to left top, #1E824C 50%, transparent 50%);
+}
+
+.pumpkin-text {
+  color: black;
+  font-family:'Misfits', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  position: absolute;
+  z-index: 100;
+  top: 6px;
+  left: 4px;
+}
+
+.pumpkin-text:focus,
+.pumpkin-text:active {
+  outline: none;
+}
+
+.pumpkin-body:hover .pumpkin-text {
+  color: #bc0d0d;
+  animation: fire 50ms ease-in infinite alternate;
+}
+
+@keyframes fire {
+  0% {
+    fill: #bc0d0d;
+    transform: rotate(-1deg);
+  }
+  20% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-1deg);
+  }
+  60% {
+    transform: rotate(0deg) scaleX(1.01);
+  }
+  80% {
+    transform: rotate(-1deg) scaleX(1.09);
+  }
+  100% {
+    fill: #ce8506;
+    transform: rotate(1deg);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0px -5px 10px 10px rgba(240, 139, 49, 0.30);
+  }
+  100% {
+    box-shadow: 0px -10px 20px 10px rgba(240, 139, 49, 0.55);
+  }
+}
+
+/** modals **/
+
+.spooky-modal-content {
+  background-color: rgb(28, 28, 29);
+}
+
+.spooky-modal-header {
+  background-color: #A60026;
+  border: none;
+}
+
+.spooky-modal-title {
+  color: white;
+  background-color:#A60026;
+  font-family: 'Halloween Morning', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 60px;
+  text-align: center;
+}
+
+.spooky-modal-body {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 0;
+}
+
+.spooky-modal-footer {
+  border: none;
+}
+
+/** sign up modal **/
+
+
+.signup-form {
+    max-width: 600px;
+    padding: 10px 70px 20px 70px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.circle-portrait {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  text-align: center;
+  overflow: hidden;
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.circle-portrait img {
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  width: 100%;
+  height: auto;
+  border: 30px solid transparent;
+  background:url(../assets/images/circle-frame.png) center/100% 100% border-box;
+}
+
+.signup-form .item{
+	border-radius: 10px;
+  margin-bottom: 25px;
+  padding: 10px 20px;
+}
+
+.signup-form .create-account{
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #A60026;
+  border: none;
+  color: white;
+}
+
+@media (max-width: 576px) {
+    .signup-form form{
+      padding: 50px 20px;
+    }
+
+    .signup-form .form-icon{
+      width: 70px;
+      height: 70px;
+      font-size: 30px;
+      line-height: 70px;
+    }
+}
