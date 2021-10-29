@@ -4,6 +4,6 @@ const userRoute = require('./userRoute');
 const placeRoute = require('./placeRoute');
 
 router.use('/users', userRoute);
-router.use('/projects', placeRoute);
+router.use('/places', placeRoute);
 
 module.exports = router;

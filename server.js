@@ -3,6 +3,7 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const sequelize = require("./config/connection");
+const routes = require('./controller');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -31,10 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 // maybe this is false ^^^
 app.use(express.static(path.join(__dirname, "public")));
 
-// app.use(route);
-// is this necessary? ^^^
-
-// app.use(require('./controllers/'));
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => {
