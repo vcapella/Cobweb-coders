@@ -10,13 +10,15 @@
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 	<!-- Bootstrap core CSS -->
-	<link href="./plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	{{!-- <link href="./plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"> --}}
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<!-- Font Icon Styles -->
 	<script src="https://kit.fontawesome.com/fd91f3fcd6.js" crossorigin="anonymous"></script>
 
 	<!-- Style -->
-	<link href="./public/css/style.css" rel="stylesheet">
+	<link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -57,7 +59,7 @@
 				
 					<form class="signup-form">
 						<div class="circle-portrait">
-								<img src="./public/assets/images/haunted-portrait.gif">
+								<img src="/assets/images/haunted-portrait.gif">
 						</div>
 						<div class="form-group">
 								<input type="text" class="form-control item" id="username" placeholder="Username" required>
@@ -91,7 +93,7 @@
 				
 					<form class="signup-form">
 						<div class="circle-portrait">
-								<img src="./public/assets/images/haunted-portrait2.gif">
+								<img src="/assets/images/haunted-portrait2.gif">
 						</div>
 						<div class="form-group">
 								<input type="text" class="form-control item" id="username" placeholder="Username" required>
@@ -108,6 +110,6 @@
   </div>
 </div>
 
-<script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+{{!-- <script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script> --}}
 </body>
 </html>

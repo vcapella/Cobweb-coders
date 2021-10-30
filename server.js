@@ -1,7 +1,6 @@
-
 const path = require("path");
 const express = require("express");
-const route = require('./controller');
+const routes = require("./controller");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const sequelize = require("./config/connection");
@@ -33,7 +32,7 @@ app.use(express.urlencoded({ extended: false }));
 // maybe this is false ^^^
 app.use(express.static(path.join(__dirname, "public")));
 
-// app.use(route);
+app.use(routes);
 // is this necessary? ^^^
 
 // app.use(require('./controllers/'));
