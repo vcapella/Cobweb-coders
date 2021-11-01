@@ -4,11 +4,9 @@ const { User, Review, Place } = require('../../models');
 // create user 
 router.post('/', async (req, res) => {
     try {
-      const userData = await User.create({
-        username: req.body.name,
-        email: req.body.email,
-        password: req.body.password,
-      });
+      const userData = await User.create(
+      req.body
+      );
   
       req.session.save(() => {
         req.session.user_id = userData.id;
@@ -24,7 +22,7 @@ router.post('/', async (req, res) => {
 // login endpoint
 router.post('/login', async (req, res) => {
     try {
-      const userData = await User.findOne({ where: { email: req.body.email } });
+      const userData = await User.findOne({ where: { name: req.body.name } });
   
       if (!userData) {
         res
@@ -109,3 +107,4 @@ router.get('/reviews/:id', async (req, res) => {
 //         res.status(500).json(err);
 //     }
 // });
+module.exports=router;

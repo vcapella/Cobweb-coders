@@ -5,7 +5,7 @@
   <section class="haunted-house_desc-card">
     <img class="haunted-house_img" src="https://picsum.photos/1000/1000" alt="Image Title" />
     <div class="haunted-house_text">
-      <h1 class="haunted-house_title"><span>House Name/Title</span></h1>
+      <h1 class="haunted-house_title"><span>{{place.location}}</span></h1>
       <div class="haunted-house_subtitle">Subtitle</div>
       <div class="haunted-house_divider"></div>
       <div class="haunted-house_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
@@ -17,33 +17,20 @@
           <div class="d-flex flex-column comment-section">
               <h1>Been here? Tell us what you thought!</h1>
               <div class="post-review p-4">
-                  <div class="d-flex flex-row align-items-start"><textarea class="form-control ml-1 shadow-none textarea"></textarea></div>
-                  <div class="mt-2 text-right"><button class="btn btn-primary btn-sm shadow-none" type="button">Post comment</button><button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="button">Cancel</button></div>
+                  <div class="d-flex flex-row align-items-start"><textarea id="commentText" class="form-control ml-1 shadow-none textarea"></textarea></div>
+                  <div class="mt-2 text-right"><button id="commentSubmit" class="btn btn-primary btn-sm shadow-none" type="button">Post comment</button><button class="btn btn-outline-primary btn-sm ml-1 shadow-none" type="button">Cancel</button></div>
               </div>
           </div>
+         
 
           <h1 class="mt-4">Reviews</h1>
+          {{#each place.reviews as |review|}}
           <div class="review mb-4 text-justify"> 
               <img src="http://via.placeholder.com/50" alt="Profile picture" class="rounded-circle" width="40" height="40">
               <h4>Username</h4> <br>
-              <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
+              <p class="review-content">{{review.review_content}}</p>
           </div>
-          <div class="review mb-4 text-justify"> 
-              <img src="http://via.placeholder.com/50" alt="Profile picture" class="rounded-circle" width="40" height="40">
-              <h4>Username</h4> <br>
-              <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-          </div>
-          <div class="review mb-4 text-justify"> 
-              <img src="http://via.placeholder.com/50" alt="Profile picture" class="rounded-circle" width="40" height="40">
-              <h4>Username</h4> <br>
-              <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-          </div>
-          <div class="review mb-4 text-justify"> 
-              <img src="http://via.placeholder.com/50" alt="Profile picture" class="rounded-circle" width="40" height="40">
-              <h4>Username</h4> <br>
-              <p class="review-content">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus numquam assumenda hic aliquam vero sequi velit molestias doloremque molestiae dicta?</p>
-          </div>
-
+            {{/each}}
       </div>
       <div id="google-map" class="col-md-6">
       </div>
@@ -52,3 +39,5 @@
 </div>
 
 </main>
+
+<script src="/js/comment.js"></script>

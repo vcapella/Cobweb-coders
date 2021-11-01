@@ -2,7 +2,7 @@
   <div class="overlay"></div>
 
   <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-    <source src="../public/assets/images/GSL-halloween_loop.mp4" type="video/mp4">
+    <source src="/assets/images/GSL-halloween_loop.mp4" type="video/mp4">
   </video>
 
   <div class="container h-100">
@@ -10,7 +10,7 @@
         <form class="row g-2 needs-validation justify-content-center w-100" novalidate>
 					<div class="col-md-3">
 						<div class="form-floating">
-							<input type="text" class="form-control" id="city-input" required>
+							<input type="text" class="form-control" id="city-input">
 							<label for="city-input">City</label>
 							<div class="invalid-feedback">
 								Please provide a valid city.
@@ -19,7 +19,7 @@
 					</div>
 					<div class="col-md-3">
 						<div class="form-floating">
-							<select class="form-select" id="state-input" required>
+							<select class="form-select" id="state-input">
 								<option disabled selected value></option>
 								<option value="AL">Alabama</option>
 								<option value="AK">Alaska</option>
@@ -84,7 +84,7 @@
 							<div class="pumpkin-body">
 								<div class="middlepump">
 									<div class="innerpump">
-										<button type="submit" class="btn btn-link pumpkin-text">Submit</button>
+										<button type="submit" id="stateSubmit" class="btn btn-link pumpkin-text">Submit</button>
 									</div>
 								</div>
 							</div>
@@ -94,3 +94,5 @@
     </div>
   </div>
 </div>
+
+<script src="/js/places.js"></script>

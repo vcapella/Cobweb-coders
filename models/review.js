@@ -12,11 +12,12 @@ Review.init(
             autoIncrement: true
         },
         review_content: {
-            type: DataTypes.TEXT,
+            type: DataTypes.STRING,
             allowNull: false,
         },
         user_id: {
             type: DataTypes.INTEGER,
+            allowNull:false,
             references: {
                 model: 'user',
                 key: 'id',
@@ -24,6 +25,7 @@ Review.init(
         },
         place_id: {
             type: DataTypes.INTEGER,
+            allowNull:false,
             references: {
                 model: 'place',
                 key: 'id'
@@ -35,7 +37,7 @@ Review.init(
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'project',
+        modelName: 'review',
     }
 );
 
