@@ -3,8 +3,10 @@
 // homepage route
 const router = require("express").Router();
 const { User } = require("../models");
+
 const withAuth = require("../utils/auth");
 // (add auth to add review)
+
 router.get("/", async (req, res) => {
   try {
     const userData = await User.findAll({
@@ -33,4 +35,4 @@ router.get("/login", (req, res) => {
 });
 
 module.exports = router;
-// login in
+
