@@ -4,7 +4,6 @@ const routes = require("./controller");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const sequelize = require("./config/connection");
-const routes = require('./controller');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
