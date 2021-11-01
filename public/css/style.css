@@ -10,20 +10,42 @@
   font-family: "Misfits";
   src: url("../assets/fonts/Misfits/MISFITS_.TTF") format("truetype") }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100vh;
+}
+
 body {
-  /* font-family:'Dogica Pixel'; */
-  /* font-size: 14px; */
+  margin: 0;
+  font-size: 1.4rem;
   font-weight: 400;
-  /* line-height: 1.4; */
-  color: #F3EFF5;
-  background-color: #000;
+  line-height: 1.4;
   text-align: left;
-  overflow: hidden;
-  height: 100vh;}
+  background-color: #000;
+  color: #fff; }
 
 header .navbar {
   height: 56px;
 }
+
+.spooky-bg {
+  background-image:url(../assets/images/spooky-bg2.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;}
+
+.spooky-wallpaper {
+  background-image:url(../assets/images/spooky-wallpaper.png);
+  background-repeat: repeat-x;
+  display: flex;
+  flex-direction: column;
+  height: 100%;}
 
 /** jumbotron **/
 .spooky-jumbotron {
@@ -86,44 +108,58 @@ header .navbar {
   border: 1px solid #272727;
 }
 
-/** pumpkin button credit: https://codepen.io/ShopifyPartners/pen/pEqWNv **/
+/** pumpkin button inspired by: https://codepen.io/ShopifyPartners/pen/pEqWNv **/
 
 .pumpkin {
   position: relative;
   display: inline-block;
-  margin-right: 1em;
+  width: 120px;
 }
 
-.pumpkin-body {
-  width: 100px;
-  height: 60px;
-  background-color: #fac331;
-  border-radius: 40px;
-  background-image: linear-gradient(to right, #fac331 50%, #d4692b 50%);
-  transition: fill 150ms, box-shadow 250ms ease-in-out;
-}
-
-.pumpkin-body:hover {
-  box-shadow: 5px 10px 10px 5px rgba(240, 139, 49, 0.55);
-  animation: glow 15ms ease-in infinite alternate;
-}
-.pumpkin-body::after {
-  content: "";
-  position: absolute;
-  width: 80px;
-  height: 60px;
-  left: 10px;
-  background-color: #ef8b31;
-  border-radius: 50%;
-}
 .pumpkin-body::before {
   content: "";
   position: absolute;
   height: 20px;
   width: 12px;
-  left: 42px;
+  left: 56px;
   top: -18px;
   background-image: linear-gradient( to left top, #1E824C 50%, transparent 50%);
+}
+.pumpkin-body {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 120px;
+  height: 60px;
+  background-color: #fac331;
+  border-radius: 40px;
+  background-image: linear-gradient(to right, #FAC331 50%, #D4692B 50%);
+  transition: fill 150ms, box-shadow 250ms ease-in-out;
+}
+.pumpkin-body:hover {
+  box-shadow: 5px 10px 10px 5px rgba(240, 139, 49, 0.55);
+  animation: glow 15ms ease-in infinite alternate;
+}
+
+.middlepump {
+  position: absolute;
+  left: 10px;
+  width: 100px;
+  height: 60px;
+  background-color: #fac331;
+  border-radius: 40px;
+  background-image: linear-gradient(to right, #F9A836 50%, #E0772C 50%);
+  transition: fill 150ms, box-shadow 250ms ease-in-out;
+}
+
+.innerpump {
+  content: "";
+  position: absolute;
+  width: 70px;
+  height: 60px;
+  left: 15px;
+  background-color: #ef8b31;
+  border-radius: 50%;
 }
 
 .pumpkin-text {
@@ -137,7 +173,7 @@ header .navbar {
   position: absolute;
   z-index: 100;
   top: 6px;
-  left: 4px;
+  left: -12px;
 }
 
 .pumpkin-text:focus,
@@ -214,7 +250,6 @@ header .navbar {
 
 /** sign up modal **/
 
-
 .signup-form {
     max-width: 600px;
     padding: 10px 70px 20px 70px;
@@ -268,4 +303,300 @@ header .navbar {
       font-size: 30px;
       line-height: 70px;
     }
+}
+
+/** search results **/
+
+.top-desc {
+  color: white;
+  text-shadow: 1px 1px black;
+}
+
+.haunted-search li {
+  color: #E2A940;
+  background-color: rgb(31, 31, 36, .95);
+  border-color: #353538;
+}
+
+.haunted-media-body {
+  padding-left: 1rem;
+}
+
+.ghost-rating li {
+  color: white;
+  font-size: 20px;
+}
+
+.btn-spooky {
+  width: intrinsic;           /* Safari/WebKit uses a non-standard name */
+  width: -moz-max-content;    /* Firefox/Gecko */
+  width: -webkit-max-content; /* Chrome */
+  width: max-content;
+}
+
+/** pagination **/
+
+.pagination-outer { text-align: center; }
+
+.pagination {
+    background-color: rgb(31, 31, 36, .95);
+    border: 1px solid #353538;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    font-family: 'Oswald', sans-serif;
+    padding: 10px 15px;
+    display: inline-flex;
+    position: relative;
+    z-index: 1;
+}
+.pagination li a.page-link{
+    color: #555;
+    background: transparent;
+    font-size: 23px;
+    font-weight: 400;
+    line-height: 35px;
+    height: 35px;
+    width: 35px;
+    padding: 0;
+    margin: 0 5px;
+    border: none;
+    border-radius: 0;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease 0.1s;
+}
+.pagination li a.page-link:hover,
+.pagination li a.page-link:focus,
+.pagination li.active a.page-link{
+    color: #fff;
+    background: #000;
+    box-shadow: 0 0 10px -2px rgba(0,0,0,0.5);
+}
+.pagination li:first-child a.page-link,
+.pagination li:last-child a.page-link{
+    width: auto;
+}
+.pagination li:first-child a.page-link:hover,
+.pagination li:last-child a.page-link:hover{
+    background-color: transparent;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.5);
+    box-shadow: none;
+}
+@media only screen and (max-width: 480px){
+    .pagination{
+        font-size: 0;
+        display: block;
+    }
+    .pagination li{
+        display: inline-block;
+        margin: 0 0 10px;
+    }
+}
+
+/** footer **/
+
+.spooky-footer {
+  background-image: url(../assets/images/spooky-footer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 576px;
+  margin-top: auto; }
+
+
+.date {
+    font-size: 11px
+}
+
+.comment-text {
+    font-size: 12px
+}
+
+.fs-12 {
+    font-size: 12px
+}
+
+.shadow-none {
+    box-shadow: none
+}
+
+.name {
+    color: #007bff
+}
+
+.cursor:hover {
+    color: blue
+}
+
+.cursor {
+    cursor: pointer
+}
+
+.textarea {
+    resize: none
+}
+
+
+
+
+.haunted-house_desc-card {
+  flex-wrap: wrap;
+  display: flex;
+  box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+  border-radius: 10px;
+  margin: 0 0 2rem 0;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  background-color: rgb(31, 31, 36, .95);
+}
+
+  .haunted-house_title {
+    font-size: 1.75rem;
+  }
+
+  .haunted-house_img {
+    max-height: 180px;
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+  }
+
+  .haunted-house_divider {
+    width: 50px;
+    height: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background-color: #424242;
+    transition: width 0.2s ease;
+  }
+
+  .haunted-house_text {
+    padding: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .haunted-house_description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: justify;
+    height: 100%;
+  }
+
+  .haunted-house_desc-card:hover .haunted-house_divider {
+    width: 100px;
+  }
+
+@media screen and (min-width: 769px) {
+  .haunted-house_desc-card {
+    flex-wrap: inherit;
+  }
+    .haunted-house_title {
+      font-size: 2rem;
+    }
+
+    .haunted-house_img {
+      max-width: 300px;
+      max-height: 100%;
+      transition: transform 0.3s ease;
+    }
+
+    .haunted-house_text {
+      padding: 3rem;
+      width: 100%;
+    }
+
+    .haunted-house_desc-card:hover .haunted-house_img {
+      transform: scale(1.1);
+    }
+
+}
+@media screen and (min-width: 1024px){
+		.haunted-house_text {
+      padding: 2rem 3.5rem;
+    }
+		
+		.haunted-house_text:before {
+      content: "";
+      position: absolute;
+      display: block;
+      
+      top: -20%;
+      height: 130%;
+      width: 55px;
+    }
+}
+
+
+
+
+.comments {
+  margin-top: 5%;
+  margin-left: 20px
+}
+
+.comment {
+  background-color: rgb(31, 31, 36, .95);
+  float: left;
+  border-radius: 5px;
+  padding-left: 40px;
+  padding-right: 30px;
+  padding-top: 10px
+}
+
+.comment h4,
+.comment span,
+.darker h4,
+.darker span {
+  display: inline
+}
+
+.comment p,
+.comment span,
+.darker p,
+.darker span {
+  color: rgb(184, 183, 183)
+}
+
+h1,
+h4 {
+  color: white;
+  font-weight: bold
+}
+
+label {
+  color: rgb(212, 208, 208)
+}
+
+#align-form {
+  margin-top: 20px
+}
+
+.form-group p a {
+  color: white
+}
+
+#checkbx {
+  background-color: black
+}
+
+#darker img {
+  margin-right: 15px;
+  position: static
+}
+
+.form-group input,
+.form-group textarea {
+  background-color: black;
+  border: 1px solid rgba(16, 46, 46, 1);
+  border-radius: 12px
+}
+
+form {
+  border: 1px solid rgba(16, 46, 46, 1);
+  background-color: rgba(16, 46, 46, 0.973);
+  border-radius: 5px;
+  padding: 20px
 }
