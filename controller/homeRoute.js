@@ -4,6 +4,8 @@
 const router = require("express").Router();
 const { User } = require("../models");
 
+const withAuth = require("../utils/auth");
+// (add auth to add review)
 
 router.get("/", async (req, res) => {
   try {
