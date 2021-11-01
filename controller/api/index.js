@@ -1,9 +1,9 @@
 // api routes hub
 const router = require("express").Router();
 const userRoute = require("./userRoute");
-const placeRoute = require("./placeRoute");
+const reviewRoute = require("./reviewRoute");
 
-// router.use("/users", userRoute);
-router.use("/places", placeRoute);
+router.use("/users", userRoute);
+router.use("/reviews", reviewRoute);
 
 module.exports = router;

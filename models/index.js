@@ -1,6 +1,6 @@
 const User = require('./User');
 const Place = require('./Place');
-const Review = require('./review');
+const Review = require('./Review');
 const Vote = require('./vote');
 
 Review.belongsTo(User, {

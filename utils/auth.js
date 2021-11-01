@@ -1,10 +1,10 @@
 const withAuth = (req, res, next) => {
     // If the user is not logged in, redirect the request to the login route
     if (!req.session.logged_in) {
-      res.redirect('/login');
+      // do not allow user to post, this response should be triggered when hitting 'submit' for reviews on the listing page
     } else {
-      next();
+      //post review
     }
 };
-  
+
 module.exports = withAuth;
