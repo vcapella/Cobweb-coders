@@ -2,8 +2,8 @@ const loginFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the login form
-  const username = document.querySelector('#usernameLog').value.trim();
-  const password = document.querySelector('#passwordLog').value.trim();
+  const username = document.querySelector('#usernameLog').value;
+  const password = document.querySelector('#passwordLog').value;
 
   if (username && password) {
     // Send a POST request to the API endpoint
@@ -14,8 +14,8 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, redirect the browser to the profile page
-      document.location.replace('/homepage');
+      // If successful, refresh the page and swap the header?
+      document.location.replace('');
     } else {
       alert('Failed to log in');
     }

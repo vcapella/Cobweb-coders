@@ -23,6 +23,14 @@ Review.init(
                 key: 'id',
             },
         },
+        user_name: {
+            type: DataTypes.STRING,
+            allowNull:false,
+            references: {
+                model: 'user',
+                key: 'name',
+            },
+        },
         place_id: {
             type: DataTypes.INTEGER,
             allowNull:false,

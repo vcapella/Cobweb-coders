@@ -6,9 +6,9 @@
     <img class="haunted-house_img" src="https://picsum.photos/1000/1000" alt="Image Title" />
     <div class="haunted-house_text">
       <h1 class="haunted-house_title"><span>{{place.location}}</span></h1>
-      <div class="haunted-house_subtitle">Subtitle</div>
+      <div class="haunted-house_subtitle">{{place.state}}</div>
       <div class="haunted-house_divider"></div>
-      <div class="haunted-house_description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi, fugiat asperiores inventore beatae accusamus odit minima enim, commodi quia, doloribus eius! Ducimus nemo accusantium maiores velit corrupti tempora reiciendis molestiae repellat vero. Eveniet ipsam adipisci illo iusto quibusdam, sunt neque nulla unde ipsum dolores nobis enim quidem excepturi, illum quos!</div>
+      <div class="haunted-house_description">{{place.description}}</div>
     </div>
   </section>
 
@@ -24,13 +24,15 @@
          
 
           <h1 class="mt-4">Reviews</h1>
-          {{#each place.reviews as |review|}}
+        <div class="d-flex flex-column">
+        {{#each place.reviews as |review|}}
           <div class="review mb-4 text-justify"> 
               <img src="http://via.placeholder.com/50" alt="Profile picture" class="rounded-circle" width="40" height="40">
-              <h4>Username</h4> <br>
+              <h4>{{review.user_name}}</h4> <br>
               <p class="review-content">{{review.review_content}}</p>
           </div>
-            {{/each}}
+        {{/each}}
+        </div>
       </div>
       <div id="google-map" class="col-md-6">
       </div>

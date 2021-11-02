@@ -1,17 +1,13 @@
 const placeSubmit = async (event) => {
-  event.preventDefault();
-console.log('place javascript loaded')
-  // Collect values from the login form
- 
-	let state="Arizona"
+  event.preventDefault(); 
+	let state = document.querySelector('#state-input').value
 
-    // Send a POST request to the API endpoint
+		if (state) {
     document.location.replace(`/search/${state}`)
+		} else {
+			alert("Please choose a state!")
+		}
 
-		
-
-   
-  
 };
 
 document
