@@ -2,7 +2,7 @@
 
   <div class="row text-center mb-5 top-desc">
     <div class="col-lg-7 mx-auto">
-      <h1 class="display-4">Haunted Houses in <span id="searched-state">{{place.state}}</span></h1>
+      <h1 class="display-4">Haunted Houses</h1>
       <p class="lead mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
   </div>
@@ -16,8 +16,8 @@
        {{#each places as |place|}}
         <li class="list-group-item">
           <div class="media d-flex flex-row p-3">
-						<img src="https://via.placeholder.com/200" alt="Placeholder" width="200" class="ml-lg-5 order-1">
-            <div class="media-body haunted-media-body order-2 w-100">
+						<img src="https://picsum.photos/200/200" alt="Placeholder" width="200" class="ml-lg-5 order-1">
+            <div class="media-body haunted-media-body order-2">
               <div class="d-flex align-items-center justify-content-between mt-1 mb-2">
                 <h3 class="mt-0 font-weight-bold"><span>{{place.location}}</span></h3>
                 <ul class="list-inline small ghost-rating">
@@ -29,34 +29,14 @@
                 </ul>
               </div>
 							<div class="d-flex flex-column">
-								<p class="text-white mb-0 small">{{place.description}}</p>
+								<p class="place-description text-white mb-0 small">{{place.description}}</p>
 								<button type="button" data-placeid="{{place.id}}" class="btn btn-primary details btn-spooky mt-4">Click for more details...</button>
 							</div>
             </div>
           </div>
         </li>
         {{/each}}
-        <!-- /list group item -->
-
-        <!-- list group item-->
         
-
-    
-        <!-- /list group item -->
-
-        <!-- list group item-->
-     
-        <!-- /list group item -->
-
-        <!-- list group item-->
-       
-    
-        <!-- /list group item -->
-
-        <!-- list group item-->
-      
-        <!-- /list group item -->
-
       </ul>
       <!-- /list group -->
     </div>

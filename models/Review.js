@@ -23,7 +23,6 @@ Review.init(
         key: "id",
       },
     },
-
     place_id: {
       type: DataTypes.INTEGER,
       allowNull: false,

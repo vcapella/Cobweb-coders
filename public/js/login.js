@@ -14,7 +14,6 @@ const loginFormHandler = async (event) => {
     });
 
     if (response.ok) {
-      // If successful, refresh the page and swap the header?
       document.location.replace('');
     } else {
       alert('Failed to log in');
