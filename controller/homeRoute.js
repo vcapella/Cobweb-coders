@@ -18,11 +18,11 @@ router.get("/homepage", async (req, res) => {
 });
 
 router.get("/search/:state", async (req, res) => {
-  console.log(req.params.state);
+  console.log(decodeURI(req.params.state));
   try {
     const placesData = await Place.findAll({
       where: {
-        state: req.params.state,
+        state: decodeURI(req.params.state),
       },
       limit: 5,
     });
@@ -41,13 +41,14 @@ router.get("/search/:state", async (req, res) => {
 router.get("/listings/:id", async (req, res) => {
   try {
     const placeData = await Place.findByPk(req.params.id, {
-      include: [Review],
+      include: [{ model: Review, include: [User] }],
     });
 
     const place = placeData.get({ plain: true });
     // replace 'place' with single place page handlebar nam
 
     console.log(place);
+    console.log(place.reviews[0].user);
     res.render("listingpage", { place });
   } catch (err) {
     res.status(500).json(err);
