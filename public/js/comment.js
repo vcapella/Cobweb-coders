@@ -4,10 +4,10 @@ const commentSubmit = async (event) => {
   // Collect values from the login form
 
   let review_content = document.querySelector("#commentText").value;
+  // http://localhost:3001/listings/
 
-  //https://spooky-sights.herokuapp.com/
   let place_id = document.location.href.split(
-    "http://localhost:3001/listings/"
+    "https://spooky-sights.herokuapp.com/listings/"
   )[1];
 
   console.log(place_id);
