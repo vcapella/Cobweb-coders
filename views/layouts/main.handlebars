@@ -14,12 +14,38 @@
 
 	<!-- Font Icon Styles -->
 	<script src="https://kit.fontawesome.com/fd91f3fcd6.js" crossorigin="anonymous"></script>
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
 	<!-- Style -->
 	<link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
 
+{{#if logged_in}}
+<header>
+	<nav class="navbar navbar-expand-sm navbar-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand me-auto" href="/homepage">Spooky Sights</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse flex-grow-0" id="navbarText">
+				<ul class="navbar-nav mb-2 mb-lg-0">
+					<li class="nav-item dropdown">
+						<a href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" class="nav-item nav-link dropdown-toggle user-action">
+							<img src="/assets/images/ghost.png" class="avatar" alt="Avatar"><b class="caret"></b>
+						</a>
+
+						<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+							<li><a id="logout" class="dropdown-item" href="javascript:void(0);">Log out</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+{{else}}
 <header>
 	<nav class="navbar navbar-expand-lg navbar-dark">
 		<div class="container-fluid">
@@ -40,8 +66,7 @@
 		</div>
 	</nav>
 </header>
-
-	{{{body}}}
+{{/if}}
 
 <!-- Sign up Modal -->
 <div class="modal fade" id="signup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
@@ -108,8 +133,15 @@
   </div>
 </div>
 
+	{{{body}}}
+
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+{{#if logged_in}}
+<script src="/js/logout.js"></script>
+{{else}}
 <script src="/js/login.js"></script>
+ {{/if}}
 <script src="/js/signup.js"></script>
 
 </body>

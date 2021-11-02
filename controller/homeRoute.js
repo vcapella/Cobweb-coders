@@ -1,6 +1,3 @@
-//REVIEW
-
-// homepage route
 const router = require("express").Router();
 const { User, Place, Review } = require("../models");
 
@@ -9,7 +6,6 @@ const withAuth = require("../utils/auth");
 router.get("/", (req, res) => {
   res.redirect("/homepage");
 });
-// (add auth to add review)
 
 router.get("/homepage", async (req, res) => {
   res.render("homepage", {
@@ -31,8 +27,10 @@ router.get("/search/:state", async (req, res) => {
 
     const place1 = places[0].id;
 
-    // replace 'places' with results page handlebar name
-    res.render("searchpage", { places });
+    res.render("searchpage", { 
+      places,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -45,11 +43,13 @@ router.get("/listings/:id", async (req, res) => {
     });
 
     const place = placeData.get({ plain: true });
-    // replace 'place' with single place page handlebar nam
 
     console.log(place);
 
-    res.render("listingpage", { place });
+    res.render("listingpage", { 
+      place,
+      logged_in: req.session.logged_in
+    });
   } catch (err) {
     res.status(500).json(err);
   }

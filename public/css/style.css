@@ -31,8 +31,61 @@ body {
 }
 
 header .navbar {
+  background-color: black;
   height: 56px;
 }
+
+
+
+
+
+
+
+
+
+.navbar img {
+	border-radius: 50%;
+	width: 36px;
+	height: 36px;
+	margin-right: 10px;
+}
+
+.navbar .dropdown-menu {
+	border-radius: 1px;
+	border-color: #e5e5e5;
+	box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+.navbar .navbar-nav .active a, .navbar .navbar-nav .active a:hover, .navbar .navbar-nav .active a:focus {
+	color: #fff;
+	text-shadow: 0 0 4px rgba(255,255,255,0.2);
+	background: transparent !important;
+}
+.navbar .navbar-nav .user-action {
+	padding: 9px 15px;
+	font-size: 15px;
+}
+.navbar .navbar-toggle {
+	border-color: #fff;
+}
+.navbar .navbar-toggle .icon-bar {
+	background: #fff;
+}
+.navbar .navbar-toggle:focus, .navbar .navbar-toggle:hover {
+	background: transparent;
+}
+.navbar .navbar-nav .open .dropdown-menu {
+	background: #faf7fd;
+	border-radius: 1px;
+	border-color: #faf7fd;
+	box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+
+
+
+
+
 
 .spooky-bg {
   background-image:url(../assets/images/spooky-bg2.jpg);
@@ -111,6 +164,10 @@ header .navbar {
   color:#F3EFF5;
   background-color: black;
   border: 1px solid #272727;
+}
+
+.form-floating>label {
+  font-size: 16px;
 }
 
 /** pumpkin button inspired by: https://codepen.io/ShopifyPartners/pen/pEqWNv **/
@@ -319,6 +376,13 @@ header .navbar {
   text-shadow: 1px 1px black;
 }
 
+.place-description {
+  white-space: nowrap; 
+
+  overflow: hidden;
+  text-overflow: ellipsis; 
+}
+
 .haunted-search li {
   color: #E2A940;
   background-color: rgb(31, 31, 36, .95);
@@ -327,6 +391,7 @@ header .navbar {
 
 .haunted-media-body {
   padding-left: 1rem;
+  width: calc(100% - 200px);
 }
 
 .ghost-rating li {
