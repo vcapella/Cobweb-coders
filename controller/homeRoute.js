@@ -48,7 +48,7 @@ router.get("/listings/:id", async (req, res) => {
     // replace 'place' with single place page handlebar nam
 
     console.log(place);
-    console.log(place.reviews[0].user);
+
     res.render("listingpage", { place });
   } catch (err) {
     res.status(500).json(err);
